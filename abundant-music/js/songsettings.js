@@ -568,12 +568,12 @@ function Visualizer3DSettings() {
     this.stopMovementMode = Visualizer3DStopMovementMode.PAN_INTERACTIVE_DRAG;
     this.on = true;
     this.forceContext2D = true;
-    this.usePerspective = true;
+    this.usePerspective = false;
     this.webGLFps = 30;
     this.context2DFps = 20;
-    this.addBloom = true;
-    this.addVignette = true;
-    this.addSimulatedAA = true;
+    this.addBloom = false;
+    this.addVignette = false;
+    this.addSimulatedAA = false;
     this._constructorName = "Visualizer3DSettings";
 }
 Visualizer3DSettings.prototype = new AbstractSettings();
