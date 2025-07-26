@@ -1347,10 +1347,10 @@ function createVisualizerSettingsPanel() {
 
 function createSongSettingsPanel() {
     var $songSettingsDialog = $("#songSettingsDialogDiv");
-    var tabCaptions = ["Song", "Structure Seeds", "Content Seeds", "Indices Seeds", "Parameters", "Domains", "Details"];
-    var tabObjects = [songSettings, songStructureSeedSettings, songContentSeedSettings, songIndicesSeedSettings, songParameters, songDomains, songDetails];
-    var tabObjectPresets = [songSettingsPresets, songStructureSeedSettingsPresets, songContentSeedSettingsPresets, songIndicesSeedSettingsPresets, songParametersPresets, songDomainsPresets, songDetailsPresets];
-    var createSeeds = [false, true, true, true, false, false, false];
+    var tabCaptions = ["Song", "Genre/Mood", "Structure Seeds", "Content Seeds", "Indices Seeds", "Parameters", "Domains", "Details"];
+    var tabObjects = [songSettings, songSettings, songStructureSeedSettings, songContentSeedSettings, songIndicesSeedSettings, songParameters, songDomains, songDetails];
+    var tabObjectPresets = [songSettingsPresets, songGenrePresets, songStructureSeedSettingsPresets, songContentSeedSettingsPresets, songIndicesSeedSettingsPresets, songParametersPresets, songDomainsPresets, songDetailsPresets];
+    var createSeeds = [false, false, true, true, true, false, false, false];
     var tabsId = "songSettingsTab";
     return SongSettingsComponent.createTabs($songSettingsDialog, tabsId, "settings-panel", tabCaptions, tabObjects,
         function(comp, oldValue, newValue) {

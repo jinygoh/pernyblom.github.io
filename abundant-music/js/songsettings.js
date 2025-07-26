@@ -146,6 +146,36 @@ function SongSettingsPresets() {
 }
 SongSettingsPresets.prototype = new AbstractSettingsPresets();
 
+function SongGenrePresets() {
+    AbstractSettingsPresets.call(this);
+    var classical = new SongSettings();
+    classical.genre = SongGenre.CLASSICAL;
+    this.items.push(new PresetItem().setName("Classical").setData(classical));
+    var jazz = new SongSettings();
+    jazz.genre = SongGenre.JAZZ;
+    this.items.push(new PresetItem().setName("Jazz").setData(jazz));
+    var rock = new SongSettings();
+    rock.genre = SongGenre.ROCK;
+    this.items.push(new PresetItem().setName("Rock").setData(rock));
+    this._constructorName = "SongGenrePresets";
+}
+SongGenrePresets.prototype = new AbstractSettingsPresets();
+
+function SongMoodPresets() {
+    AbstractSettingsPresets.call(this);
+    var happy = new SongSettings();
+    happy.mood = SongMood.HAPPY;
+    this.items.push(new PresetItem().setName("Happy").setData(happy));
+    var sad = new SongSettings();
+    sad.mood = SongMood.SAD;
+    this.items.push(new PresetItem().setName("Sad").setData(sad));
+    var angry = new SongSettings();
+    angry.mood = SongMood.ANGRY;
+    this.items.push(new PresetItem().setName("Angry").setData(angry));
+    this._constructorName = "SongMoodPresets";
+}
+SongMoodPresets.prototype = new AbstractSettingsPresets();
+
 
 function SongStructureSeedSettingsPresets() {
     AbstractSettingsPresets.call(this);
@@ -583,9 +613,50 @@ function SongSettings() {
     AbstractSettings.call(this);
     this.name = "";
     this.seed = "12345";
+    this.genre = SongGenre.CLASSICAL;
+    this.mood = SongMood.HAPPY;
     this._constructorName = "SongSettings";
 }
 SongSettings.prototype = new AbstractSettings();
+
+
+var SongGenre = {
+    CLASSICAL: 0,
+    JAZZ: 1,
+    ROCK: 2,
+
+    toString: function(g) {
+        switch (g) {
+            case SongGenre.CLASSICAL:
+                return "Classical";
+            case SongGenre.JAZZ:
+                return "Jazz";
+            case SongGenre.ROCK:
+                return "Rock";
+        }
+        return "Unknown";
+    }
+};
+addPossibleValuesFunction(SongGenre, SongGenre.CLASSICAL, SongGenre.ROCK);
+
+var SongMood = {
+    HAPPY: 0,
+    SAD: 1,
+    ANGRY: 2,
+
+    toString: function(m) {
+        switch (m) {
+            case SongMood.HAPPY:
+                return "Happy";
+            case SongMood.SAD:
+                return "Sad";
+            case SongMood.ANGRY:
+                return "Angry";
+        }
+        return "Unknown";
+    }
+};
+addPossibleValuesFunction(SongMood, SongMood.HAPPY, SongMood.ANGRY);
 
 
 function SongStructureSeedSettings() {
@@ -743,6 +814,8 @@ var itExportSettingsPresets = new ItExportSettingsPresets();
 
 var songSettings = new SongSettings();
 var songSettingsPresets = new SongSettingsPresets();
+var songGenrePresets = new SongGenrePresets();
+var songMoodPresets = new SongMoodPresets();
 var songStructureSeedSettings = new SongStructureSeedSettings();
 var songStructureSeedSettingsPresets = new SongStructureSeedSettingsPresets();
 var songContentSeedSettings = new SongContentSeedSettings();
@@ -763,7 +836,7 @@ var allSettings = [
     midiExportSettings, wavExportSettings, wavClientExportSettings, mp3ExportSettings, oggExportSettings, itExportSettings, // Export
     midiExportSettingsPresets, wavExportSettingsPresets, wavClientExportSettingsPresets, mp3ExportSettingsPresets, oggExportSettingsPresets, itExportSettingsPresets, // Export presets
     songSettings, // Song
-    songSettingsPresets, // Song presets
+    songSettingsPresets, songGenrePresets, songMoodPresets, // Song presets
     songStructureSeedSettings, songContentSeedSettings, songIndicesSeedSettings, // Seeds
     songStructureSeedSettingsPresets, songContentSeedSettingsPresets, songIndicesSeedSettingsPresets, // Seeds presets
     songParameters, songDomains, songDetails, // Domains and params

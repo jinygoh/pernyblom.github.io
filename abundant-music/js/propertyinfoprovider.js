@@ -1286,6 +1286,8 @@ PropertyInfoProvider.prototype.getGuiPropertyInfos = function(obj, parentPropert
         case "SongSettings":
             result.addPropertyInfo(this.createDefaultStringPropertyInfo("name", "Name", "", "The name of your song. This is the name that shows up in the 'My Songs' tab"));
             result.addPropertyInfo(this.createDefaultStringSeedPropertyInfo("seed", "Seed", "", "The main seed. Determines all the sub seeds for structure, content and indices."));
+            result.addPropertyInfo(this.createEnumPropertyInfo("genre", "Genre", SongGenre.CLASSICAL, SongGenre));
+            result.addPropertyInfo(this.createEnumPropertyInfo("mood", "Mood", SongMood.HAPPY, SongMood));
             break;
         case "SongContentSeedSettings":
             result.addPropertyInfo(this.createDefaultStringSeedPropertyInfo("instrumentTypeSeed", "Instrument Type Seed", ""));
