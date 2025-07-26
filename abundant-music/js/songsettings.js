@@ -169,6 +169,33 @@ function SongGenrePresets() {
     var ambient = new SongSettings();
     ambient.genre = SongGenre.AMBIENT;
     this.items.push(new PresetItem().setName("Ambient").setData(ambient));
+    var funk = new SongSettings();
+    funk.genre = SongGenre.FUNK;
+    this.items.push(new PresetItem().setName("Funk").setData(funk));
+    var blues = new SongSettings();
+    blues.genre = SongGenre.BLUES;
+    this.items.push(new PresetItem().setName("Blues").setData(blues));
+    var country = new SongSettings();
+    country.genre = SongGenre.COUNTRY;
+    this.items.push(new PresetItem().setName("Country").setData(country));
+    var reggae = new SongSettings();
+    reggae.genre = SongGenre.REGGAE;
+    this.items.push(new PresetItem().setName("Reggae").setData(reggae));
+    var hiphop = new SongSettings();
+    hiphop.genre = SongGenre.HIPHOP;
+    this.items.push(new PresetItem().setName("Hip Hop").setData(hiphop));
+    var electronic = new SongSettings();
+    electronic.genre = SongGenre.ELECTRONIC;
+    this.items.push(new PresetItem().setName("Electronic").setData(electronic));
+    var folk = new SongSettings();
+    folk.genre = SongGenre.FOLK;
+    this.items.push(new PresetItem().setName("Folk").setData(folk));
+    var soul = new SongSettings();
+    soul.genre = SongGenre.SOUL;
+    this.items.push(new PresetItem().setName("Soul").setData(soul));
+    var disco = new SongSettings();
+    disco.genre = SongGenre.DISCO;
+    this.items.push(new PresetItem().setName("Disco").setData(disco));
     this._constructorName = "SongGenrePresets";
 }
 SongGenrePresets.prototype = new AbstractSettingsPresets();
@@ -190,6 +217,21 @@ function SongMoodPresets() {
     var uplifting = new SongSettings();
     uplifting.mood = SongMood.UPLIFTING;
     this.items.push(new PresetItem().setName("Uplifting").setData(uplifting));
+    var dramatic = new SongSettings();
+    dramatic.mood = SongMood.DRAMATIC;
+    this.items.push(new PresetItem().setName("Dramatic").setData(dramatic));
+    var dreamy = new SongSettings();
+    dreamy.mood = SongMood.DREAMY;
+    this.items.push(new PresetItem().setName("Dreamy").setData(dreamy));
+    var energetic = new SongSettings();
+    energetic.mood = SongMood.ENERGETIC;
+    this.items.push(new PresetItem().setName("Energetic").setData(energetic));
+    var peaceful = new SongSettings();
+    peaceful.mood = SongMood.PEACEFUL;
+    this.items.push(new PresetItem().setName("Peaceful").setData(peaceful));
+    var romantic = new SongSettings();
+    romantic.mood = SongMood.ROMANTIC;
+    this.items.push(new PresetItem().setName("Romantic").setData(romantic));
     this._constructorName = "SongMoodPresets";
 }
 SongMoodPresets.prototype = new AbstractSettingsPresets();
@@ -646,6 +688,15 @@ var SongGenre = {
     PUNK: 4,
     POP: 5,
     AMBIENT: 6,
+    FUNK: 7,
+    BLUES: 8,
+    COUNTRY: 9,
+    REGGAE: 10,
+    HIPHOP: 11,
+    ELECTRONIC: 12,
+    FOLK: 13,
+    SOUL: 14,
+    DISCO: 15,
 
     toString: function(g) {
         switch (g) {
@@ -663,11 +714,29 @@ var SongGenre = {
                 return "Pop";
             case SongGenre.AMBIENT:
                 return "Ambient";
+            case SongGenre.FUNK:
+                return "Funk";
+            case SongGenre.BLUES:
+                return "Blues";
+            case SongGenre.COUNTRY:
+                return "Country";
+            case SongGenre.REGGAE:
+                return "Reggae";
+            case SongGenre.HIPHOP:
+                return "Hip Hop";
+            case SongGenre.ELECTRONIC:
+                return "Electronic";
+            case SongGenre.FOLK:
+                return "Folk";
+            case SongGenre.SOUL:
+                return "Soul";
+            case SongGenre.DISCO:
+                return "Disco";
         }
         return "Unknown";
     }
 };
-addPossibleValuesFunction(SongGenre, SongGenre.CLASSICAL, SongGenre.AMBIENT);
+addPossibleValuesFunction(SongGenre, SongGenre.CLASSICAL, SongGenre.DISCO);
 
 var SongMood = {
     HAPPY: 0,
@@ -675,6 +744,11 @@ var SongMood = {
     ANGRY: 2,
     MYSTERIOUS: 3,
     UPLIFTING: 4,
+    DRAMATIC: 5,
+    DREAMY: 6,
+    ENERGETIC: 7,
+    PEACEFUL: 8,
+    ROMANTIC: 9,
 
     toString: function(m) {
         switch (m) {
@@ -688,11 +762,21 @@ var SongMood = {
                 return "Mysterious";
             case SongMood.UPLIFTING:
                 return "Uplifting";
+            case SongMood.DRAMATIC:
+                return "Dramatic";
+            case SongMood.DREAMY:
+                return "Dreamy";
+            case SongMood.ENERGETIC:
+                return "Energetic";
+            case SongMood.PEACEFUL:
+                return "Peaceful";
+            case SongMood.ROMANTIC:
+                return "Romantic";
         }
         return "Unknown";
     }
 };
-addPossibleValuesFunction(SongMood, SongMood.HAPPY, SongMood.UPLIFTING);
+addPossibleValuesFunction(SongMood, SongMood.HAPPY, SongMood.ROMANTIC);
 
 
 function SongStructureSeedSettings() {
