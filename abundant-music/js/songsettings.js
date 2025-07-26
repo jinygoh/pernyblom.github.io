@@ -157,6 +157,18 @@ function SongGenrePresets() {
     var rock = new SongSettings();
     rock.genre = SongGenre.ROCK;
     this.items.push(new PresetItem().setName("Rock").setData(rock));
+    var metal = new SongSettings();
+    metal.genre = SongGenre.METAL;
+    this.items.push(new PresetItem().setName("Metal").setData(metal));
+    var punk = new SongSettings();
+    punk.genre = SongGenre.PUNK;
+    this.items.push(new PresetItem().setName("Punk").setData(punk));
+    var pop = new SongSettings();
+    pop.genre = SongGenre.POP;
+    this.items.push(new PresetItem().setName("Pop").setData(pop));
+    var ambient = new SongSettings();
+    ambient.genre = SongGenre.AMBIENT;
+    this.items.push(new PresetItem().setName("Ambient").setData(ambient));
     this._constructorName = "SongGenrePresets";
 }
 SongGenrePresets.prototype = new AbstractSettingsPresets();
@@ -172,6 +184,12 @@ function SongMoodPresets() {
     var angry = new SongSettings();
     angry.mood = SongMood.ANGRY;
     this.items.push(new PresetItem().setName("Angry").setData(angry));
+    var mysterious = new SongSettings();
+    mysterious.mood = SongMood.MYSTERIOUS;
+    this.items.push(new PresetItem().setName("Mysterious").setData(mysterious));
+    var uplifting = new SongSettings();
+    uplifting.mood = SongMood.UPLIFTING;
+    this.items.push(new PresetItem().setName("Uplifting").setData(uplifting));
     this._constructorName = "SongMoodPresets";
 }
 SongMoodPresets.prototype = new AbstractSettingsPresets();
@@ -624,6 +642,10 @@ var SongGenre = {
     CLASSICAL: 0,
     JAZZ: 1,
     ROCK: 2,
+    METAL: 3,
+    PUNK: 4,
+    POP: 5,
+    AMBIENT: 6,
 
     toString: function(g) {
         switch (g) {
@@ -633,16 +655,26 @@ var SongGenre = {
                 return "Jazz";
             case SongGenre.ROCK:
                 return "Rock";
+            case SongGenre.METAL:
+                return "Metal";
+            case SongGenre.PUNK:
+                return "Punk";
+            case SongGenre.POP:
+                return "Pop";
+            case SongGenre.AMBIENT:
+                return "Ambient";
         }
         return "Unknown";
     }
 };
-addPossibleValuesFunction(SongGenre, SongGenre.CLASSICAL, SongGenre.ROCK);
+addPossibleValuesFunction(SongGenre, SongGenre.CLASSICAL, SongGenre.AMBIENT);
 
 var SongMood = {
     HAPPY: 0,
     SAD: 1,
     ANGRY: 2,
+    MYSTERIOUS: 3,
+    UPLIFTING: 4,
 
     toString: function(m) {
         switch (m) {
@@ -652,11 +684,15 @@ var SongMood = {
                 return "Sad";
             case SongMood.ANGRY:
                 return "Angry";
+            case SongMood.MYSTERIOUS:
+                return "Mysterious";
+            case SongMood.UPLIFTING:
+                return "Uplifting";
         }
         return "Unknown";
     }
 };
-addPossibleValuesFunction(SongMood, SongMood.HAPPY, SongMood.ANGRY);
+addPossibleValuesFunction(SongMood, SongMood.HAPPY, SongMood.UPLIFTING);
 
 
 function SongStructureSeedSettings() {
