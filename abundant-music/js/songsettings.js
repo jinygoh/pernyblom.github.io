@@ -691,6 +691,8 @@ SongIndicesSeedSettings.prototype = new AbstractSettings();
 function SongParameters() {
     GenInfo.call(this);
     AbstractSettings.call(this);
+    this.genre = "acoustic";
+    this.mood = "happy";
     this._constructorName = "SongParameters";
 }
 SongParameters.prototype = new AbstractSettings();

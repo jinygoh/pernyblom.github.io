@@ -854,3 +854,61 @@ var PhraseHarmonyElementType = {
 
 };
 addPossibleValuesFunction(PhraseHarmonyElementType, PhraseHarmonyElementType.COMPLETE, PhraseHarmonyElementType.CHROMATIC_OSCILLATION);
+
+
+var Genre = {
+    ELECTRONIC: 0,
+    ACOUSTIC: 1,
+    ELECTRIC: 2,
+    AMBIENT: 3,
+    CHIPTUNE: 4,
+    DISCO: 5,
+    FUNK: 6,
+    HIP_HOP: 7,
+    JAZZ: 8,
+    LATIN: 9,
+    METAL: 10,
+    POP: 11,
+    REGGAE: 12,
+
+    toString: function(g) {
+        switch (g) {
+            case Genre.ELECTRONIC: return "Electronic";
+            case Genre.ACOUSTIC: return "Acoustic";
+            case Genre.ELECTRIC: return "Electric";
+            case Genre.AMBIENT: return "Ambient";
+            case Genre.CHIPTUNE: return "Chiptune";
+            case Genre.DISCO: return "Disco";
+            case Genre.FUNK: return "Funk";
+            case Genre.HIP_HOP: return "Hip Hop";
+            case Genre.JAZZ: return "Jazz";
+            case Genre.LATIN: return "Latin";
+            case Genre.METAL: return "Metal";
+            case Genre.POP: return "Pop";
+            case Genre.REGGAE: return "Reggae";
+        }
+        return "Unknown genre " + g;
+    }
+};
+addPossibleValuesFunction(Genre, Genre.ELECTRONIC, Genre.REGGAE);
+
+
+var Mood = {
+    HAPPY: 0,
+    SAD: 1,
+    ENERGETIC: 2,
+    RELAXING: 3,
+    MYSTERIOUS: 4,
+
+    toString: function(m) {
+        switch (m) {
+            case Mood.HAPPY: return "Happy";
+            case Mood.SAD: return "Sad";
+            case Mood.ENERGETIC: return "Energetic";
+            case Mood.RELAXING: return "Relaxing";
+            case Mood.MYSTERIOUS: return "Mysterious";
+        }
+        return "Unknown mood " + m;
+    }
+};
+addPossibleValuesFunction(Mood, Mood.HAPPY, Mood.MYSTERIOUS);

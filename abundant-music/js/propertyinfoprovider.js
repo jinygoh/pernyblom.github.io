@@ -1376,26 +1376,8 @@ PropertyInfoProvider.prototype.getGuiPropertyInfos = function(obj, parentPropert
             result.addPropertyInfo(this.createDefaultLikelihoodPropertyInfo("timeSignature3Likelihood", "3/4 Time Signature Likelihood", 1.0));
             result.addPropertyInfo(this.createDefaultLikelihoodPropertyInfo("timeSignature4Likelihood", "4/4 Time Signature Likelihood", 3.0));
 
-            result.addPropertyInfo(this.createDefaultLikelihoodPropertyInfo("electronicLikelihood", "Electronic Instruments Likelihood", 1.0));
-            result.addPropertyInfo(this.createDefaultLikelihoodPropertyInfo("electricLikelihood", "Electric Instruments Likelihood", 1.0));
-            result.addPropertyInfo(this.createDefaultLikelihoodPropertyInfo("acousticLikelihood", "Acoustic Instruments Likelihood", 1.0));
-
-            result.addPropertyInfo(this.createDefaultLikelihoodPropertyInfo("ambientLikelihood", "Ambient Likelihood", 1.0));
-            result.addPropertyInfo(this.createDefaultLikelihoodPropertyInfo("chiptuneLikelihood", "Chiptune Likelihood", 1.0));
-            result.addPropertyInfo(this.createDefaultLikelihoodPropertyInfo("discoLikelihood", "Disco Likelihood", 1.0));
-            result.addPropertyInfo(this.createDefaultLikelihoodPropertyInfo("funkLikelihood", "Funk Likelihood", 1.0));
-            result.addPropertyInfo(this.createDefaultLikelihoodPropertyInfo("hipHopLikelihood", "Hip Hop Likelihood", 1.0));
-            result.addPropertyInfo(this.createDefaultLikelihoodPropertyInfo("jazzLikelihood", "Jazz Likelihood", 1.0));
-            result.addPropertyInfo(this.createDefaultLikelihoodPropertyInfo("latinLikelihood", "Latin Likelihood", 1.0));
-            result.addPropertyInfo(this.createDefaultLikelihoodPropertyInfo("metalLikelihood", "Metal Likelihood", 1.0));
-            result.addPropertyInfo(this.createDefaultLikelihoodPropertyInfo("popLikelihood", "Pop Likelihood", 1.0));
-            result.addPropertyInfo(this.createDefaultLikelihoodPropertyInfo("reggaeLikelihood", "Reggae Likelihood", 1.0));
-
-            result.addPropertyInfo(this.createDefaultLikelihoodPropertyInfo("happyLikelihood", "Happy Likelihood", 1.0));
-            result.addPropertyInfo(this.createDefaultLikelihoodPropertyInfo("sadLikelihood", "Sad Likelihood", 1.0));
-            result.addPropertyInfo(this.createDefaultLikelihoodPropertyInfo("energeticLikelihood", "Energetic Likelihood", 1.0));
-            result.addPropertyInfo(this.createDefaultLikelihoodPropertyInfo("relaxingLikelihood", "Relaxing Likelihood", 1.0));
-            result.addPropertyInfo(this.createDefaultLikelihoodPropertyInfo("mysteriousLikelihood", "Mysterious Likelihood", 1.0));
+            result.addPropertyInfo(this.createEnumPropertyInfo("genre", "Genre", Genre.ACOUSTIC, Genre));
+            result.addPropertyInfo(this.createEnumPropertyInfo("mood", "Mood", Mood.HAPPY, Mood));
 
             result.addPropertyInfo(this.createDefaultLikelihoodPropertyInfo("strictBuildSongStructureLikelihoodMultiplier", "Strict Build Likelihood Multiplier", 1.0));
             result.addPropertyInfo(this.createDefaultLikelihoodPropertyInfo("buildSongStructureLikelihoodMultiplier", "Build Likelihood Multiplier", 1.0));

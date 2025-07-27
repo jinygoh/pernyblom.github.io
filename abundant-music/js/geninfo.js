@@ -112,22 +112,6 @@ function GenInfo() {
     this.electronicLikelihood = 1.0; //  : Kommer troligtvis att ändras när man får bättre musikstilar :)
     this.electricLikelihood = 1.0; //  : Kommer troligtvis att ändras när man får bättre musikstilar :)
     this.acousticLikelihood = 1.0; //  : Kommer troligtvis att ändras när man får bättre musikstilar :)
-    this.ambientLikelihood = 1.0;
-    this.chiptuneLikelihood = 1.0;
-    this.discoLikelihood = 1.0;
-    this.funkLikelihood = 1.0;
-    this.hipHopLikelihood = 1.0;
-    this.jazzLikelihood = 1.0;
-    this.latinLikelihood = 1.0;
-    this.metalLikelihood = 1.0;
-    this.popLikelihood = 1.0;
-    this.reggaeLikelihood = 1.0;
-
-    this.happyLikelihood = 1.0;
-    this.sadLikelihood = 1.0;
-    this.energeticLikelihood = 1.0;
-    this.relaxingLikelihood = 1.0;
-    this.mysteriousLikelihood = 1.0;
     this.filterFEffectsProbMultiplier = 1.0; // :
     this.filterBWEffectsProbMultiplier = 1.0; // :
     this.panEffectsProbMultiplier = 1.0; // :
