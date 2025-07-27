@@ -1709,7 +1709,7 @@ function composeSetup1() {
 
     var startTime = Date.now();
 
-    visualizer = new CanvasVisualizer3D(canvasfor2dcontext, startTime);
+    visualizer = new Visualizer(canvasfor2dcontext, startTime);
 //    visualizer.render();
 
 

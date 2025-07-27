@@ -6332,17 +6332,6 @@ PropertyInfoProvider.prototype.getGuiPropertyInfos = function(obj, parentPropert
             result.addPropertyInfo(this.createDefaultBooleanPropertyInfo("transparentDialogs", "Use transparent dialogs", false));
 //            result.addPropertyInfo(this.createProcedureButtonPropertyInfo("Update theme", "update", {update: function() {updateTheme()}}));
             break;
-        case "Visualizer3DSettings":
-            result.addPropertyInfo(this.createDefaultBooleanPropertyInfo("on", "On", true));
-            result.addPropertyInfo(this.createDefaultMinMaxIntPropertyInfo("webGLFps", "FPS (WebGL)", 20, 1, 60));
-            result.addPropertyInfo(this.createDefaultMinMaxIntPropertyInfo("context2DFps", "FPS (2D Context)", 5, 1, 60));
-            result.addPropertyInfo(this.createEnumPropertyInfo("stopMovementMode", "Stop Movement Mode", Visualizer3DStopMovementMode.PAN, Visualizer3DStopMovementMode));
-            result.addPropertyInfo(this.createDefaultBooleanPropertyInfo("forceContext2D", "Force 2D Context", false));
-            result.addPropertyInfo(this.createDefaultBooleanPropertyInfo("usePerspective", "Perspective mode", true));
-            result.addPropertyInfo(this.createDefaultBooleanPropertyInfo("addBloom", "Add Bloom", true));
-            result.addPropertyInfo(this.createDefaultBooleanPropertyInfo("addSimulatedAA", "Add Simulated Antialising", true));
-            result.addPropertyInfo(this.createDefaultBooleanPropertyInfo("addVignette", "Add Vignette", true));
-            break;
         case "SongSettings":
             result.addPropertyInfo(this.createDefaultStringPropertyInfo("name", "Name", "", "The name of your song. This is the name that shows up in the 'My Songs' tab"));
             result.addPropertyInfo(this.createDefaultStringSeedPropertyInfo("seed", "Seed", "", "The main seed. Determines all the sub seeds for structure, content and indices."));
