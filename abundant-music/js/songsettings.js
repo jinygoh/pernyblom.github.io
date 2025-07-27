@@ -1,6 +1,3 @@
-
-
-
 function AbstractSettings(options) {
     this.storagePrefix = ""; // getValueOrDefault(options, "storagePrefix", "");
     this.dirty = false;
@@ -188,14 +185,6 @@ function SongDetailsPresets() {
     this._constructorName = "SongDetailsPresets";
 }
 SongDetailsPresets.prototype = new AbstractSettingsPresets();
-
-
-function Visualizer3DSettingsPresets() {
-    AbstractSettingsPresets.call(this);
-    this.items.push(new PresetItem().setName("Default").setData(new Visualizer3DSettings()));
-    this._constructorName = "Visualizer3DSettingsPresets";
-}
-Visualizer3DSettingsPresets.prototype = new AbstractSettingsPresets();
 
 
 function ThemeSettingsPresets() {
@@ -527,58 +516,6 @@ function ThemeSettings() {
 ThemeSettings.prototype = new AbstractSettings();
 
 
-
-var Visualizer3DStopMovementMode = {
-    ROTATE: 0,
-    PAN: 1,
-    PAN_INTERACTIVE_HOVER: 2,
-    ROTATE_INTERACTIVE_HOVER: 3,
-    ROTATE_PAN_INTERACTIVE_HOVER: 4,
-    PAN_INTERACTIVE_DRAG: 5,
-    ROTATE_INTERACTIVE_DRAG: 6,
-    ROTATE_PAN_INTERACTIVE_DRAG: 7,
-
-    toString: function(t) {
-        switch (t) {
-            case Visualizer3DStopMovementMode.ROTATE:
-                return "Rotate";
-            case Visualizer3DStopMovementMode.PAN:
-                return "Pan";
-            case Visualizer3DStopMovementMode.ROTATE_INTERACTIVE_HOVER:
-                return "Rotate Interactive Hover";
-            case Visualizer3DStopMovementMode.PAN_INTERACTIVE_HOVER:
-                return "Pan Interactive Hover";
-            case Visualizer3DStopMovementMode.ROTATE_PAN_INTERACTIVE_HOVER:
-                return "Rotate + Pan Interactive Hover";
-            case Visualizer3DStopMovementMode.ROTATE_PAN_INTERACTIVE_DRAG:
-                return "Rotate + Pan Interactive Drag";
-            case Visualizer3DStopMovementMode.ROTATE_INTERACTIVE_DRAG:
-                return "Rotate Interactive Drag";
-            case Visualizer3DStopMovementMode.PAN_INTERACTIVE_DRAG:
-                return "Pan Interactive Drag";
-        }
-        return "Unknown vis movement mode " + t;
-    }
-};
-addPossibleValuesFunction(Visualizer3DStopMovementMode, Visualizer3DStopMovementMode.ROTATE, Visualizer3DStopMovementMode.ROTATE_PAN_INTERACTIVE_DRAG);
-
-
-function Visualizer3DSettings() {
-    AbstractSettings.call(this);
-    this.stopMovementMode = Visualizer3DStopMovementMode.PAN_INTERACTIVE_DRAG;
-    this.on = true;
-    this.forceContext2D = true;
-    this.usePerspective = true;
-    this.webGLFps = 30;
-    this.context2DFps = 20;
-    this.addBloom = true;
-    this.addVignette = true;
-    this.addSimulatedAA = true;
-    this._constructorName = "Visualizer3DSettings";
-}
-Visualizer3DSettings.prototype = new AbstractSettings();
-
-
 function SongSettings() {
     AbstractSettings.call(this);
     this.name = "";
@@ -718,9 +655,6 @@ var renderStorage = new RenderStorage();
 
 var editorSettings = new EditorSettings();
 
-var visualizer3DSettings = new Visualizer3DSettings();
-var visualizer3DSettingsPresets = new Visualizer3DSettingsPresets();
-
 var themeSettings = new ThemeSettings();
 var themeSettingsPresets = new ThemeSettingsPresets();
 
@@ -759,7 +693,7 @@ var songDetailsPresets = new SongDetailsPresets();
 var allSettings = [
     renderStorage, // Rendered stuff
     themeSettings,
-    editorSettings, visualizer3DSettings, webAudioPlayerSettings, soundManager2PlayerSettings, audioElementPlayerSettings, // GUI
+    editorSettings, webAudioPlayerSettings, soundManager2PlayerSettings, audioElementPlayerSettings, // GUI
     midiExportSettings, wavExportSettings, wavClientExportSettings, mp3ExportSettings, oggExportSettings, itExportSettings, // Export
     midiExportSettingsPresets, wavExportSettingsPresets, wavClientExportSettingsPresets, mp3ExportSettingsPresets, oggExportSettingsPresets, itExportSettingsPresets, // Export presets
     songSettings, // Song
@@ -793,4 +727,3 @@ function saveSettingsToLocalStorage() {
         }
     }
 }
-

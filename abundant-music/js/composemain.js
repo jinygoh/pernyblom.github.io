@@ -1709,25 +1709,7 @@ function composeSetup1() {
 
     var startTime = Date.now();
 
-    if (Modernizr.webgl && !visualizer3DSettings.forceContext2D) {
-//        visualizer = new CanvasVisualizer3D(canvasfor2dcontext, startTime);
-        var webGLOptions = {
-            addBloom: visualizer3DSettings.addBloom,
-            addSimulatedAA: visualizer3DSettings.addSimulatedAA,
-            addVignette: visualizer3DSettings.addVignette
-        };
-        try {
-            visualizer = new WebGLVisualizer3D(canvasfor2dcontext, webGLOptions);
-            usingWebGL = true;
-        } catch (exc) {
-            console.log(exc);
-            console.log("Error when initializing webgl. Using 2D context.");
-            visualizer = new CanvasVisualizer3D(canvasfor2dcontext, startTime);
-            visualizer3DSettings.forceContext2D = true;
-        }
-    } else {
-        visualizer = new CanvasVisualizer3D(canvasfor2dcontext, startTime);
-    }
+    visualizer = new Visualizer2D(canvasfor2dcontext);
 //    visualizer.render();
 
 
@@ -1780,10 +1762,10 @@ function composeSetup4() {
         });
     }
 
-    var dialogs = ["songSettings", "songInfo", "player", "visualizerSettings", "tutorials", "songs", "export", "help", "feedback", "account"];
-    var captions = ["Song Settings" , "Song Info", "Player", "Visual Settings", "Tutorials", "Songs", "Export", "Help/Credits", "Feedback", "Account"];
-    var widths = ["60em", "60em", Modernizr.webaudio ? "45em" : null, "45em", "55em", "45em", "45em", "50em", lightServerMode ? null : "45em", lightServerMode ? null : "40em"];
-    var ats = ["right", "right top", "right", "top", "left", "top", "top", "left", "left", "left"];
+    var dialogs = ["songSettings", "songInfo", "player", "tutorials", "songs", "export", "help", "feedback", "account"];
+    var captions = ["Song Settings" , "Song Info", "Player", "Tutorials", "Songs", "Export", "Help/Credits", "Feedback", "Account"];
+    var widths = ["60em", "60em", Modernizr.webaudio ? "45em" : null, "55em", "45em", "45em", "50em", lightServerMode ? null : "45em", lightServerMode ? null : "40em"];
+    var ats = ["right", "right top", "right", "left", "top", "top", "left", "left", "left"];
 
     for (var i=0; i<dialogs.length; i++) {
 
