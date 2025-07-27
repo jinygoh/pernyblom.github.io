@@ -1347,10 +1347,10 @@ function createVisualizerSettingsPanel() {
 
 function createSongSettingsPanel() {
     var $songSettingsDialog = $("#songSettingsDialogDiv");
-    var tabCaptions = ["Song", "Structure Seeds", "Content Seeds", "Indices Seeds", "Parameters", "Domains", "Details"];
-    var tabObjects = [songSettings, songStructureSeedSettings, songContentSeedSettings, songIndicesSeedSettings, songParameters, songDomains, songDetails];
-    var tabObjectPresets = [songSettingsPresets, songStructureSeedSettingsPresets, songContentSeedSettingsPresets, songIndicesSeedSettingsPresets, songParametersPresets, songDomainsPresets, songDetailsPresets];
-    var createSeeds = [false, true, true, true, false, false, false];
+    var tabCaptions = ["Song", "Structure Seeds", "Content Seeds", "Indices Seeds", "Parameters", "Domains", "Details", "Genres"];
+    var tabObjects = [songSettings, songStructureSeedSettings, songContentSeedSettings, songIndicesSeedSettings, songParameters, songDomains, songDetails, songParameters];
+    var tabObjectPresets = [songSettingsPresets, songStructureSeedSettingsPresets, songContentSeedSettingsPresets, songIndicesSeedSettingsPresets, songParametersPresets, songDomainsPresets, songDetailsPresets, songParametersPresets];
+    var createSeeds = [false, true, true, true, false, false, false, false];
     var tabsId = "songSettingsTab";
     return SongSettingsComponent.createTabs($songSettingsDialog, tabsId, "settings-panel", tabCaptions, tabObjects,
         function(comp, oldValue, newValue) {
@@ -1822,6 +1822,20 @@ function composeSetup4() {
                 }
             );
         }
+    });
+
+    function randomizeAll() {
+        var seed = Math.floor(Math.random() * 1000000);
+        var rnd = new MersenneTwister(seed);
+        globalGenInfo.randomize(rnd);
+        updateSongSettingsComponent(globalGenInfo, songSettings);
+        setSongSettingsDirty(true);
+    }
+
+    var $randomizeButton = $("#randomizeButton");
+    $randomizeButton.button();
+    $randomizeButton.click(function() {
+        randomizeAll();
     });
 
     // Updating GUI from settings

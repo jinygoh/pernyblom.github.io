@@ -112,6 +112,22 @@ function GenInfo() {
     this.electronicLikelihood = 1.0; //  : Kommer troligtvis att ändras när man får bättre musikstilar :)
     this.electricLikelihood = 1.0; //  : Kommer troligtvis att ändras när man får bättre musikstilar :)
     this.acousticLikelihood = 1.0; //  : Kommer troligtvis att ändras när man får bättre musikstilar :)
+    this.ambientLikelihood = 1.0;
+    this.chiptuneLikelihood = 1.0;
+    this.discoLikelihood = 1.0;
+    this.funkLikelihood = 1.0;
+    this.hipHopLikelihood = 1.0;
+    this.jazzLikelihood = 1.0;
+    this.latinLikelihood = 1.0;
+    this.metalLikelihood = 1.0;
+    this.popLikelihood = 1.0;
+    this.reggaeLikelihood = 1.0;
+
+    this.happyLikelihood = 1.0;
+    this.sadLikelihood = 1.0;
+    this.energeticLikelihood = 1.0;
+    this.relaxingLikelihood = 1.0;
+    this.mysteriousLikelihood = 1.0;
     this.filterFEffectsProbMultiplier = 1.0; // :
     this.filterBWEffectsProbMultiplier = 1.0; // :
     this.panEffectsProbMultiplier = 1.0; // :
@@ -368,6 +384,181 @@ function GenInfo() {
         new MidiProgramDataSample({data: MidiProgram.SLAP_BASS_2, likelihood: 1}),
         // new MidiProgramDataSample({data: MidiProgram.TIMPANI, likelihood: 1}),
         new MidiProgramDataSample({data: MidiProgram.ACOUSTIC_BASS, likelihood: 1})
+    ];
+
+    this.ambientMelodyInstrInfos = [
+        new MidiProgramDataSample({data: MidiProgram.NEW_AGE_PAD, likelihood: 1}),
+        new MidiProgramDataSample({data: MidiProgram.WARM_PAD, likelihood: 1}),
+        new MidiProgramDataSample({data: MidiProgram.POLYSYNTH_PAD, likelihood: 1})
+    ];
+    this.ambientInnerFastInstrInfos = [
+        new MidiProgramDataSample({data: MidiProgram.NEW_AGE_PAD, likelihood: 1}),
+        new MidiProgramDataSample({data: MidiProgram.WARM_PAD, likelihood: 1}),
+        new MidiProgramDataSample({data: MidiProgram.POLYSYNTH_PAD, likelihood: 1})
+    ];
+    this.ambientInnerSlowInstrInfos = [
+        new MidiProgramDataSample({data: MidiProgram.NEW_AGE_PAD, likelihood: 1}),
+        new MidiProgramDataSample({data: MidiProgram.WARM_PAD, likelihood: 1}),
+        new MidiProgramDataSample({data: MidiProgram.POLYSYNTH_PAD, likelihood: 1})
+    ];
+    this.ambientBassInstrInfos = [
+        new MidiProgramDataSample({data: MidiProgram.SYNTH_BASS_1, likelihood: 1}),
+        new MidiProgramDataSample({data: MidiProgram.SYNTH_BASS_2, likelihood: 1})
+    ];
+
+    this.chiptuneMelodyInstrInfos = [
+        new MidiProgramDataSample({data: MidiProgram.SQUARE_LEAD, likelihood: 1}),
+        new MidiProgramDataSample({data: MidiProgram.SAW_LEAD, likelihood: 1})
+    ];
+    this.chiptuneInnerFastInstrInfos = [
+        new MidiProgramDataSample({data: MidiProgram.SQUARE_LEAD, likelihood: 1}),
+        new MidiProgramDataSample({data: MidiProgram.SAW_LEAD, likelihood: 1})
+    ];
+    this.chiptuneInnerSlowInstrInfos = [
+        new MidiProgramDataSample({data: MidiProgram.SQUARE_LEAD, likelihood: 1}),
+        new MidiProgramDataSample({data: MidiProgram.SAW_LEAD, likelihood: 1})
+    ];
+    this.chiptuneBassInstrInfos = [
+        new MidiProgramDataSample({data: MidiProgram.SQUARE_LEAD, likelihood: 1}),
+        new MidiProgramDataSample({data: MidiProgram.SAW_LEAD, likelihood: 1})
+    ];
+
+    this.discoMelodyInstrInfos = [
+        new MidiProgramDataSample({data: MidiProgram.SYNTH_BRASS_1, likelihood: 1}),
+        new MidiProgramDataSample({data: MidiProgram.SYNTH_BRASS_2, likelihood: 1}),
+        new MidiProgramDataSample({data: MidiProgram.ELECTRIC_PIANO_1, likelihood: 1})
+    ];
+    this.discoInnerFastInstrInfos = [
+        new MidiProgramDataSample({data: MidiProgram.ELECTRIC_PIANO_1, likelihood: 1}),
+        new MidiProgramDataSample({data: MidiProgram.ELECTRIC_PIANO_2, likelihood: 1}),
+        new MidiProgramDataSample({data: MidiProgram.SYNTH_STRINGS_1, likelihood: 1})
+    ];
+    this.discoInnerSlowInstrInfos = [
+        new MidiProgramDataSample({data: MidiProgram.SYNTH_STRINGS_1, likelihood: 1}),
+        new MidiProgramDataSample({data: MidiProgram.SYNTH_STRINGS_2, likelihood: 1})
+    ];
+    this.discoBassInstrInfos = [
+        new MidiProgramDataSample({data: MidiProgram.ELECTRIC_FINGER_BASS, likelihood: 1}),
+        new MidiProgramDataSample({data: MidiProgram.ELECTRIC_PICK_BASS, likelihood: 1})
+    ];
+
+    this.funkMelodyInstrInfos = [
+        new MidiProgramDataSample({data: MidiProgram.ELECTRIC_GUITAR_MUTED, likelihood: 1}),
+        new MidiProgramDataSample({data: MidiProgram.TRUMPET, likelihood: 1}),
+        new MidiProgramDataSample({data: MidiProgram.TENOR_SAX, likelihood: 1})
+    ];
+    this.funkInnerFastInstrInfos = [
+        new MidiProgramDataSample({data: MidiProgram.ELECTRIC_PIANO_1, likelihood: 1}),
+        new MidiProgramDataSample({data: MidiProgram.CLAVINET, likelihood: 1})
+    ];
+    this.funkInnerSlowInstrInfos = [
+        new MidiProgramDataSample({data: MidiProgram.SYNTH_BRASS_1, likelihood: 1}),
+        new MidiProgramDataSample({data: MidiProgram.SYNTH_BRASS_2, likelihood: 1})
+    ];
+    this.funkBassInstrInfos = [
+        new MidiProgramDataSample({data: MidiProgram.ELECTRIC_FINGER_BASS, likelihood: 1}),
+        new MidiProgramDataSample({data: MidiProgram.SLAP_BASS_1, likelihood: 1})
+    ];
+
+    this.hipHopMelodyInstrInfos = [
+        new MidiProgramDataSample({data: MidiProgram.SYNTH_LEAD_1, likelihood: 1}),
+        new MidiProgramDataSample({data: MidiProgram.SYNTH_LEAD_2, likelihood: 1})
+    ];
+    this.hipHopInnerFastInstrInfos = [
+        new MidiProgramDataSample({data: MidiProgram.ELECTRIC_PIANO_1, likelihood: 1}),
+        new MidiProgramDataSample({data: MidiProgram.ELECTRIC_PIANO_2, likelihood: 1})
+    ];
+    this.hipHopInnerSlowInstrInfos = [
+        new MidiProgramDataSample({data: MidiProgram.SYNTH_STRINGS_1, likelihood: 1}),
+        new MidiProgramDataSample({data: MidiProgram.SYNTH_STRINGS_2, likelihood: 1})
+    ];
+    this.hipHopBassInstrInfos = [
+        new MidiProgramDataSample({data: MidiProgram.SYNTH_BASS_1, likelihood: 1}),
+        new MidiProgramDataSample({data: MidiProgram.SYNTH_BASS_2, likelihood: 1})
+    ];
+
+    this.jazzMelodyInstrInfos = [
+        new MidiProgramDataSample({data: MidiProgram.TRUMPET, likelihood: 1}),
+        new MidiProgramDataSample({data: MidiProgram.TENOR_SAX, likelihood: 1}),
+        new MidiProgramDataSample({data: MidiProgram.ALTO_SAX, likelihood: 1}),
+        new MidiProgramDataSample({data: MidiProgram.TROMBONE, likelihood: 1})
+    ];
+    this.jazzInnerFastInstrInfos = [
+        new MidiProgramDataSample({data: MidiProgram.ELECTRIC_PIANO_1, likelihood: 1}),
+        new MidiProgramDataSample({data: MidiProgram.ACOUSTIC_GRAND_PIANO, likelihood: 1})
+    ];
+    this.jazzInnerSlowInstrInfos = [
+        new MidiProgramDataSample({data: MidiProgram.VIBRAPHONE, likelihood: 1})
+    ];
+    this.jazzBassInstrInfos = [
+        new MidiProgramDataSample({data: MidiProgram.ACOUSTIC_BASS, likelihood: 1})
+    ];
+
+    this.latinMelodyInstrInfos = [
+        new MidiProgramDataSample({data: MidiProgram.TRUMPET, likelihood: 1}),
+        new MidiProgramDataSample({data: MidiProgram.TROMBONE, likelihood: 1}),
+        new MidiProgramDataSample({data: MidiProgram.FLUTE, likelihood: 1})
+    ];
+    this.latinInnerFastInstrInfos = [
+        new MidiProgramDataSample({data: MidiProgram.ACOUSTIC_GRAND_PIANO, likelihood: 1}),
+        new MidiProgramDataSample({data: MidiProgram.ELECTRIC_PIANO_1, likelihood: 1})
+    ];
+    this.latinInnerSlowInstrInfos = [
+        new MidiProgramDataSample({data: MidiProgram.STRING_ENSEMBLE_1, likelihood: 1})
+    ];
+    this.latinBassInstrInfos = [
+        new MidiProgramDataSample({data: MidiProgram.ACOUSTIC_BASS, likelihood: 1})
+    ];
+
+    this.metalMelodyInstrInfos = [
+        new MidiProgramDataSample({data: MidiProgram.DISTORTION_GUITAR, likelihood: 1}),
+        new MidiProgramDataSample({data: MidiProgram.OVERDRIVEN_GUITAR, likelihood: 1})
+    ];
+    this.metalInnerFastInstrInfos = [
+        new MidiProgramDataSample({data: MidiProgram.DISTORTION_GUITAR, likelihood: 1}),
+        new MidiProgramDataSample({data: MidiProgram.OVERDRIVEN_GUITAR, likelihood: 1})
+    ];
+    this.metalInnerSlowInstrInfos = [
+        new MidiProgramDataSample({data: MidiProgram.DISTORTION_GUITAR, likelihood: 1}),
+        new MidiProgramDataSample({data: MidiProgram.OVERDRIVEN_GUITAR, likelihood: 1})
+    ];
+    this.metalBassInstrInfos = [
+        new MidiProgramDataSample({data: MidiProgram.ELECTRIC_PICK_BASS, likelihood: 1})
+    ];
+
+    this.popMelodyInstrInfos = [
+        new MidiProgramDataSample({data: MidiProgram.SYNTH_LEAD_1, likelihood: 1}),
+        new MidiProgramDataSample({data: MidiProgram.SYNTH_LEAD_2, likelihood: 1}),
+        new MidiProgramDataSample({data: MidiProgram.ELECTRIC_PIANO_1, likelihood: 1})
+    ];
+    this.popInnerFastInstrInfos = [
+        new MidiProgramDataSample({data: MidiProgram.ELECTRIC_PIANO_1, likelihood: 1}),
+        new MidiProgramDataSample({data: MidiProgram.ELECTRIC_PIANO_2, likelihood: 1}),
+        new MidiProgramDataSample({data: MidiProgram.SYNTH_STRINGS_1, likelihood: 1})
+    ];
+    this.popInnerSlowInstrInfos = [
+        new MidiProgramDataSample({data: MidiProgram.SYNTH_STRINGS_1, likelihood: 1}),
+        new MidiProgramDataSample({data: MidiProgram.SYNTH_STRINGS_2, likelihood: 1})
+    ];
+    this.popBassInstrInfos = [
+        new MidiProgramDataSample({data: MidiProgram.SYNTH_BASS_1, likelihood: 1}),
+        new MidiProgramDataSample({data: MidiProgram.SYNTH_BASS_2, likelihood: 1})
+    ];
+
+    this.reggaeMelodyInstrInfos = [
+        new MidiProgramDataSample({data: MidiProgram.ELECTRIC_GUITAR_MUTED, likelihood: 1}),
+        new MidiProgramDataSample({data: MidiProgram.STEEL_DRUMS, likelihood: 1})
+    ];
+    this.reggaeInnerFastInstrInfos = [
+        new MidiProgramDataSample({data: MidiProgram.ELECTRIC_ORGAN, likelihood: 1}),
+        new MidiProgramDataSample({data: MidiProgram.PERCUSSIVE_ORGAN, likelihood: 1})
+    ];
+    this.reggaeInnerSlowInstrInfos = [
+        new MidiProgramDataSample({data: MidiProgram.SYNTH_BRASS_1, likelihood: 1}),
+        new MidiProgramDataSample({data: MidiProgram.SYNTH_BRASS_2, likelihood: 1})
+    ];
+    this.reggaeBassInstrInfos = [
+        new MidiProgramDataSample({data: MidiProgram.ELECTRIC_FINGER_BASS, likelihood: 1})
     ];
 
 
