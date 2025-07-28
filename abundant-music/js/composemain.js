@@ -1610,7 +1610,27 @@ function renderSong(doneFunc, cancelFunc, failFunc) {
         songSettingsChangedWhileRendering = false;
 
         var seed = getMainSeed();
-        var renderRequestData = {seed: seed, sectionIndex: -1, genInfo: getGenInfo()};
+        var genInfo = getGenInfo();
+
+        var genre = songParameters.genre;
+        var mood = songParameters.mood;
+
+        var a = Genre.toString(genre).toLowerCase();
+
+        genInfo.acousticMelodyInstrInfos = globalGenInfo[a + "MelodyInstrInfos"];
+        genInfo.acousticInnerFastInstrInfos = globalGenInfo[a + "InnerFastInstrInfos"];
+        genInfo.acousticInnerSlowInstrInfos = globalGenInfo[a + "InnerSlowInstrInfos"];
+        genInfo.acousticBassInstrInfos = globalGenInfo[a + "BassInstrInfos"];
+        genInfo.electricMelodyInstrInfos = globalGenInfo[a + "MelodyInstrInfos"];
+        genInfo.electricInnerFastInstrInfos = globalGenInfo[a + "InnerFastInstrInfos"];
+        genInfo.electricInnerSlowInstrInfos = globalGenInfo[a + "InnerSlowInstrInfos"];
+        genInfo.electricBassInstrInfos = globalGenInfo[a + "BassInstrInfos"];
+        genInfo.electronicMelodyInstrInfos = globalGenInfo[a + "MelodyInstrInfos"];
+        genInfo.electronicInnerFastInstrInfos = globalGenInfo[a + "InnerFastInstrInfos"];
+        genInfo.electronicInnerSlowInstrInfos = globalGenInfo[a + "InnerSlowInstrInfos"];
+        genInfo.electronicBassInstrInfos = globalGenInfo[a + "BassInstrInfos"];
+
+        var renderRequestData = {seed: seed, sectionIndex: -1, genInfo: genInfo};
 
 //    logit("Rendeirng with seed " + seed);
 
